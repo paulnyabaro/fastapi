@@ -1,3 +1,7 @@
-import random
+from fastapi import FastAPI
 
-print(random.randint(1,98))
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to my first API app"}
